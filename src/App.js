@@ -13,6 +13,7 @@ const App = () => {
   const searchMovies = useCallback(async (title) => {
     try {
       const response = await fetch(`${API_URL}&s=${title}&type=${searchType}`);
+      
       const data = await response.json();
       if (data && data.Search) {
         setMovies(data.Search);

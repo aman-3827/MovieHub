@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MovieCard = ({ movie }) => {
-  console.log(movie.Title,movie.Poster)
+//   console.log(movie.Title,movie.Poster)
     return (
         <div className='movie'>
           <div>
