@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import SearchIcon from './search.svg';
 import MovieCard from './MovieCard';
@@ -10,7 +10,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchType, setSearchType] = useState('movie');
 
-  const searchMovies = async (title) => {
+  const searchMovies = useCallback(async (title) => {
     try {
       const response = await fetch(`${API_URL}&s=${title}&type=${searchType}`);
       const data = await response.json();
@@ -23,19 +23,14 @@ const App = () => {
       console.error('Error fetching movies:', error);
       setMovies([]);
     }
-  };
+  }, [searchType]); // Add `searchType` as a dependency
 
   useEffect(() => {
     if (searchTerm) {
       searchMovies(searchTerm);
     }
-    else{
-      searchMovies('Batman')
-    }
-  }, [searchTerm, searchType,searchMovies]);
-
-
- 
+    else searchMovies("Batman")
+  }, [searchTerm, searchType, searchMovies]); // Add `searchMovies` as a dependency
 
   return (
     <div className='app'>
