@@ -32,7 +32,7 @@ const App = () => {
     else{
       searchMovies('Batman')
     }
-  }, [searchTerm, searchType]);
+  }, [searchTerm, searchType,searchMovies]);
 
 
  
