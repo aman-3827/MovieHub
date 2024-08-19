@@ -43,8 +43,9 @@ const App = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <div>
+        <div className='search-type'>
           <input 
+            className='movie-search'
             type='radio' 
             name='type' 
             id='movie' 
@@ -54,6 +55,7 @@ const App = () => {
           /> Movie
 
           <input 
+            className='series-search'
             type='radio' 
             name='type' 
             id='series' 
@@ -63,6 +65,7 @@ const App = () => {
           /> Series
 
           <input 
+            className='episode-search'
             type='radio' 
             name='type' 
             id='episode' 

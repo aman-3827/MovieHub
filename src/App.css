@@ -234,3 +234,22 @@ h1 {
     margin: 1rem;
   }
 }
+
+.movie-search{
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.series-search{
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.episode-search{
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.search-type{
+  margin-right: 20px;
+}
